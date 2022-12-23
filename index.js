@@ -2,14 +2,14 @@
 // alert("hello");
 window.addEventListener('load', function(){
 
-    let myAge=prompt("Hello There");
+    let myAge=prompt("ENTER YOUR AGE AND PASS THE PHONE");
 
     let number=0;
     let maxScore=14;
     const currentScore=0;
   
     this.document.querySelector('#btn').addEventListener('click', ()=>{
- 
+        document.querySelector("#highscore").innerHTML=maxScore;
         myAge=Number(myAge);//convert my age to number
 
         number=document.querySelector('#value').value;
@@ -23,12 +23,23 @@ window.addEventListener('load', function(){
 
         if(myAge!=number){
             document.querySelector("#guess-result").innerHTML="WRONG GUESS TRY AGAIN ";
+            document.querySelector("#guess-result").style.display="block"
             document.querySelector("#guess-result").style.color="#ff0000";
-            max-=2;
-            this.document.querySelector("#higscore").innerHTML=max;
+            maxScore-=2;
+            document.querySelector("#highscore").innerHTML=maxScore;
+
+            document.querySelector("#btn").style.backgroundColor="Red";
+            document.querySelector("#btn").innerHTML="Try Again";
+
         } else{
+            document.querySelector("#guess-result").style.display="block"
             document.querySelector("#guess-result").innerHTML="YOU GUESSED RIGHT";
             document.querySelector("#guess-result").style.color="#00ff00";
+
+            document.querySelector("#btn").display=true;
+            document.querySelector("#btn").style.backgroundColor="grey";
+
+
         }
     });
 
