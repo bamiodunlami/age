@@ -2,12 +2,17 @@
 // alert("hello");
 window.addEventListener('load', function(){
 
-    let myAge=prompt("ENTER YOUR AGE AND PASS THE PHONE");
 
     let number=0;
     let maxScore=14;
     const currentScore=0;
+    
     document.querySelector("#highscore").innerHTML=maxScore;
+   
+    let myAge=prompt("ENTER YOUR AGE AND PASS THE PHONE");
+    this.document.querySelector("#guest-instruction").innerHTML=`guess between 1 and ${myAge}`;
+
+
     this.document.querySelector('#btn').addEventListener('click', ()=>{
 
         myAge=Number(myAge);//convert my age to number
