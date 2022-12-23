@@ -7,11 +7,10 @@ window.addEventListener('load', function(){
     let number=0;
     let maxScore=14;
     const currentScore=0;
-  
+    document.querySelector("#highscore").innerHTML=maxScore;
     this.document.querySelector('#btn').addEventListener('click', ()=>{
-        document.querySelector("#highscore").innerHTML=maxScore;
-        myAge=Number(myAge);//convert my age to number
 
+        myAge=Number(myAge);//convert my age to number
         number=document.querySelector('#value').value;
         console.log(`Number selected is ${number}`);// log tjhe value of input
 
@@ -25,7 +24,10 @@ window.addEventListener('load', function(){
             document.querySelector("#guess-result").innerHTML="WRONG GUESS TRY AGAIN ";
             document.querySelector("#guess-result").style.display="block"
             document.querySelector("#guess-result").style.color="#ff0000";
-            maxScore-=2;
+            maxScore-=1;
+            if(maxScore<0){
+                maxScore=0;
+            }
             document.querySelector("#highscore").innerHTML=maxScore;
 
             document.querySelector("#btn").style.backgroundColor="Red";
