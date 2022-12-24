@@ -10,12 +10,13 @@ window.addEventListener('load', function(){
     document.querySelector("#highscore").innerHTML=maxScore;
    
     let myAge=prompt("ENTER YOUR AGE AND PASS THE PHONE");
+    myAge=Number(myAge);//convert my age to number
     this.document.querySelector("#guest-instruction").innerHTML=`guess between 1 and ${Math.floor(Math.random()+4) + myAge }`;
 
 
     this.document.querySelector('#btn').addEventListener('click', ()=>{
 
-        myAge=Number(myAge);//convert my age to number
+
         number=document.querySelector('#value').value;
         console.log(`Number selected is ${number}`);// log tjhe value of input
 
